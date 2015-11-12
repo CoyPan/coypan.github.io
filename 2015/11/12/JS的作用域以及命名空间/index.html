@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="English,essay," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -53,16 +53,30 @@
 
 
 
-<meta name="description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
+<meta name="description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+
+一、JS的作用域
+JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
+function f(){    var bb=”123”;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/2015/11/08/Hello/index.html">
+<meta property="og:title" content="JS的作用域以及命名空间">
+<meta property="og:url" content="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/index.html">
 <meta property="og:site_name" content="Coy Blog">
-<meta property="og:description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
-<meta property="og:updated_time" content="2015-11-10T12:48:50.000Z">
+<meta property="og:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+
+一、JS的作用域
+JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
+function f(){    var bb=”123”;">
+<meta property="og:image" content="http://yoursite.com/images/1.png">
+<meta property="og:image" content="http://yoursite.com/images/2.png">
+<meta property="og:updated_time" content="2015-11-12T15:55:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello">
-<meta name="twitter:description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
+<meta name="twitter:title" content="JS的作用域以及命名空间">
+<meta name="twitter:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+
+一、JS的作用域
+JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
+function f(){    var bb=”123”;">
 
 
 
@@ -74,7 +88,7 @@
   };
 </script>
 
-  <title> Hello | Coy Blog </title>
+  <title> JS的作用域以及命名空间 | Coy Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +241,7 @@
             
             
               
-                Hello
+                JS的作用域以及命名空间
               
             
           </h1>
@@ -236,8 +250,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-08T21:54:25+08:00" content="2015-11-08">
-              2015-11-08
+            <time itemprop="dateCreated" datetime="2015-11-12T23:30:25+08:00" content="2015-11-12">
+              2015-11-12
             </time>
           </span>
 
@@ -246,8 +260,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NonTech/" itemprop="url" rel="index">
-                    <span itemprop="name">NonTech</span>
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
                   </a>
                 </span>
 
@@ -262,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/08/Hello/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/08/Hello/" itemprop="commentsCount"></span>
+                <a href="/2015/11/12/JS的作用域以及命名空间/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/JS的作用域以及命名空间/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -287,11 +301,17 @@
       
 
       
-        <span itemprop="articleBody"><p>My name is Coy Pan and I am a fresh graduate.<br><br>When I was a child, I dreamed of becoming an astronomer.<br><br>Then I become a programmer.<br><br>During my spare time, I love to dance and do some sports.<br><br>During my work time, I write the code, fix the bug, fix the bug and fix the bug.<br><br>And one day, I will become a good FEer.<br><br>I am Coy Pan.<br></p>
-<h2 id="Main_body">Main body</h2><p>I write the paragraph above by imitating the opening of <strong><em><a href="http://baike.baidu.com/link?url=72hIUZzfaRPWo3MVk5RZn3GlnCrULgzPCuMd5zZNwerZzy9vcU9RtdpKmBozy80q1rJBDDdq2O540wRi_G9dzWtg-luaW66tF65N9KqqQO3" target="_blank" rel="external">the Flash</a></em></strong>.<br></p>
-<p>This site is built by <a href="https://pages.github.com" target="_blank" rel="external">github pages</a> and <a href="https://hexo.io" target="_blank" rel="external">hexo</a>. I plan to write something that I learn from studying and life here.<br></p>
-<p>Well, I already have a personal website <strong><em><a href="http://coypan.com" target="_blank" rel="external">coypan.com</a><br></em></strong></p>
-<p>My English is really poor. T T </p>
+        <span itemprop="articleBody"><blockquote>
+<p>之前写过一篇博客，总结了一下<a href="http://coypan.com/blog/javascript-关于变量的全面总结.html" target="_blank" rel="external">JS变量</a>。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  </p>
+</blockquote>
+<h2 id="一、JS的作用域">一、JS的作用域</h2><hr>
+<p>JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在<strong>代码解析阶段</strong>就完成的，<strong>不是</strong>在执行阶段。用以下的例子就可以说明:      </p>
+<p><pre><code>function f(){<br>    var bb=”123”;<br>    var aa=function(){<br>        console.log(bb);<br>    }<br>    return aa;<br>}<br>function cc(para){<br>    var bb=para;<br>    var func=f();<br>    func();<br>}<br>cc(“111”);<br></code></pre><br>这段代码的输出是:”123”，而不是”111”。这是因为在声明函数的时候，函数f及其内部aa指向的匿名函数的作用域、作用域链就已经确定了。该匿名函数的作用域链为：aa-&gt;f-&gt;window.<br>在cc函数中，func函数指向的也是aa指向的函数，是同一个函数。所以在cc执行的时候，func指向的那个匿名函数是读不到func外部，cc内部的那个bb变量的，只能沿着其作用域链aa-&gt;f-&gt;window向上走，在f函数的作用域内找到了bb=”123”.将其输出.  </p>
+<h2 id="二、html页面中JS的作用域">二、html页面中JS的作用域</h2><p>这个问题很简单。先看下面这段代码：<br><img src="/images/1.png" style="width: 600px;"><br>首先在页面顶部引入了test.js.这里，test.js的代码如下：  </p>
+<p><pre><code>function func1(){<br>    console.log(“this is func1”);<br>}<br></code></pre><br>接着，又在一个新的<code>script</code>标签内调用了这个func1函数。这个函数成功执行了。也就是说，在一个html文件中，所有的JS代码，不管是引入的，还是嵌在页面中的，都是在一个作用域内，这个最大的作用域就是window.好吧，其实这是十分显而易见的。我这不是废话么。 </p>
+<h2 id="三、JS的命名空间">三、JS的命名空间</h2><p>说到自己写的那个很搓的库myComponent.js，开始写的时候，我是按照impress.js那个模式来写的。库代码的模板为:  </p>
+<p><pre><code>(function (window,document){<br>    …<br>    …<br>    var myComponent = window.myComponent = (function () {<br>        var init = function () {<br>            …<br>        }<br>        return {<br>            init: init<br>        }<br>    })()<br>})(window,document)<br></code></pre><br>而使用这个库的时候，只需要在html文件中，引入myComponent.js并且使用<code>myComponent.init()</code>就行了。像下面这样:<br><img src="/images/2.png" style="width: 600px;"><br>其实，这里就涉及到了<strong>命名空间</strong>。<br>使用一个<strong>立即执行的匿名函数</strong>来完成整个库的逻辑，在这个匿名函数外部是访问不到函数内部的变量的，然后在<strong>window对象上「注册」一个变量myComponent</strong>,而这个myComponent其实是一个接口，使得可以在html文件中调用这个库。这样封装的好处就是:库文件内的代码和外部的代码完全隔离，互不影响，不会出现因变量名相同而导致的代码混乱。    </p>
+<p>以上。</p>
 </span>
       
     </div>
@@ -300,9 +320,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/English/" rel="tag">#English</a>
-          
-            <a href="/tags/essay/" rel="tag">#essay</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -311,13 +329,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/11/08/Hello/" rel="next" title="Hello">
+                <i class="fa fa-chevron-left"></i> Hello
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/12/JS的作用域以及命名空间/" rel="prev" title="JS的作用域以及命名空间">
-                JS的作用域以及命名空间 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +385,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/08/Hello/"
-           data-title="Hello" data-url="http://yoursite.com/2015/11/08/Hello/">
+      <div class="ds-thread" data-thread-key="2015/11/12/JS的作用域以及命名空间/"
+           data-title="JS的作用域以及命名空间" data-url="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/">
       </div>
     
   </div>
@@ -491,7 +509,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Main_body"><span class="nav-number">1.</span> <span class="nav-text">Main body</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JS的作用域"><span class="nav-number">1.</span> <span class="nav-text">一、JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、html页面中JS的作用域"><span class="nav-number">2.</span> <span class="nav-text">二、html页面中JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、JS的命名空间"><span class="nav-number">3.</span> <span class="nav-text">三、JS的命名空间</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
