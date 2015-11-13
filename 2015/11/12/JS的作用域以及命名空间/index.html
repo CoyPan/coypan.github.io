@@ -69,7 +69,7 @@ JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的�
 function f(){    var bb=”123”;">
 <meta property="og:image" content="http://yoursite.com/images/1.png">
 <meta property="og:image" content="http://yoursite.com/images/2.png">
-<meta property="og:updated_time" content="2015-11-12T15:55:56.000Z">
+<meta property="og:updated_time" content="2015-11-13T04:43:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS的作用域以及命名空间">
 <meta name="twitter:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
@@ -229,8 +229,7 @@ function f(){    var bb=”123”;">
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
+ 
 
     
       <header class="post-header">
@@ -285,9 +284,10 @@ function f(){    var bb=”123”;">
 
           
           
-
           
-            <span id="busuanzi_container_page_pv">  &nbsp|&nbsp 阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+           <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          
+            <span id="busuanzi_container_page_pv"> 阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
           
 
         </div>
@@ -307,9 +307,11 @@ function f(){    var bb=”123”;">
 <h2 id="一、JS的作用域">一、JS的作用域</h2><hr>
 <p>JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在<strong>代码解析阶段</strong>就完成的，<strong>不是</strong>在执行阶段。用以下的例子就可以说明:      </p>
 <p><pre><code>function f(){<br>    var bb=”123”;<br>    var aa=function(){<br>        console.log(bb);<br>    }<br>    return aa;<br>}<br>function cc(para){<br>    var bb=para;<br>    var func=f();<br>    func();<br>}<br>cc(“111”);<br></code></pre><br>这段代码的输出是:”123”，而不是”111”。这是因为在声明函数的时候，函数f及其内部aa指向的匿名函数的作用域、作用域链就已经确定了。该匿名函数的作用域链为：aa-&gt;f-&gt;window.<br>在cc函数中，func函数指向的也是aa指向的函数，是同一个函数。所以在cc执行的时候，func指向的那个匿名函数是读不到func外部，cc内部的那个bb变量的，只能沿着其作用域链aa-&gt;f-&gt;window向上走，在f函数的作用域内找到了bb=”123”.将其输出.  </p>
-<h2 id="二、html页面中JS的作用域">二、html页面中JS的作用域</h2><p>这个问题很简单。先看下面这段代码：<br><img src="/images/1.png" style="width: 600px;"><br>首先在页面顶部引入了test.js.这里，test.js的代码如下：  </p>
+<h2 id="二、html页面中JS的作用域">二、html页面中JS的作用域</h2><hr>
+<p>这个问题很简单。先看下面这段代码：<br><img src="/images/1.png" style="width: 600px;"><br>首先在页面顶部引入了test.js.这里，test.js的代码如下：  </p>
 <p><pre><code>function func1(){<br>    console.log(“this is func1”);<br>}<br></code></pre><br>接着，又在一个新的<code>script</code>标签内调用了这个func1函数。这个函数成功执行了。也就是说，在一个html文件中，所有的JS代码，不管是引入的，还是嵌在页面中的，都是在一个作用域内，这个最大的作用域就是window.好吧，其实这是十分显而易见的。我这不是废话么。 </p>
-<h2 id="三、JS的命名空间">三、JS的命名空间</h2><p>说到自己写的那个很搓的库myComponent.js，开始写的时候，我是按照impress.js那个模式来写的。库代码的模板为:  </p>
+<h2 id="三、JS的命名空间">三、JS的命名空间</h2><hr>
+<p>说到自己写的那个很搓的库myComponent.js，开始写的时候，我是按照impress.js那个模式来写的。库代码的模板为:  </p>
 <p><pre><code>(function (window,document){<br>    …<br>    …<br>    var myComponent = window.myComponent = (function () {<br>        var init = function () {<br>            …<br>        }<br>        return {<br>            init: init<br>        }<br>    })()<br>})(window,document)<br></code></pre><br>而使用这个库的时候，只需要在html文件中，引入myComponent.js并且使用<code>myComponent.init()</code>就行了。像下面这样:<br><img src="/images/2.png" style="width: 600px;"><br>其实，这里就涉及到了<strong>命名空间</strong>。<br>使用一个<strong>立即执行的匿名函数</strong>来完成整个库的逻辑，在这个匿名函数外部是访问不到函数内部的变量的，然后在<strong>window对象上「注册」一个变量myComponent</strong>,而这个myComponent其实是一个接口，使得可以在html文件中调用这个库。这样封装的好处就是:库文件内的代码和外部的代码完全隔离，互不影响，不会出现因变量名相同而导致的代码混乱。    </p>
 <p>以上。</p>
 </span>
@@ -552,7 +554,7 @@ function f(){    var bb=”123”;">
 </script>
 
 <span id="busuanzi_container_site_pv">
-    &nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
 
 
