@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="English,essay," />
+  <meta name="keywords" content="JavaScript,js对象,私有变量," />
 
 
 
@@ -53,16 +53,40 @@
 
 
 
-<meta name="description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
+<meta name="description" content="在面向对象编程的过程中，难免会遇到一些场景，对象需要保存其私有的变量，不被外界所修改。这里总结一下JavaScript中，关于对象私有变量的问题。
+
+Javascript中的对象在JS中生成一个对象，构造函数是一个较为常用的方法。
+function Person(name,age){ 
+    this.name=name;
+    this.age=age;
+}
+
+var coy=new Per">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello">
-<meta property="og:url" content="http://yoursite.com/2015/11/08/Hello/index.html">
+<meta property="og:title" content="js中的私有变量">
+<meta property="og:url" content="http://yoursite.com/2015/12/22/js中的私有变量/index.html">
 <meta property="og:site_name" content="Coy Blog">
-<meta property="og:description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
-<meta property="og:updated_time" content="2015-11-10T12:48:50.000Z">
+<meta property="og:description" content="在面向对象编程的过程中，难免会遇到一些场景，对象需要保存其私有的变量，不被外界所修改。这里总结一下JavaScript中，关于对象私有变量的问题。
+
+Javascript中的对象在JS中生成一个对象，构造函数是一个较为常用的方法。
+function Person(name,age){ 
+    this.name=name;
+    this.age=age;
+}
+
+var coy=new Per">
+<meta property="og:updated_time" content="2015-12-22T13:29:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello">
-<meta name="twitter:description" content="My name is Coy Pan and I am a fresh graduate.When I was a child, I dreamed of becoming an astronomer.Then I become a programmer.During my spare time, I love to dance and do some sports.During my work">
+<meta name="twitter:title" content="js中的私有变量">
+<meta name="twitter:description" content="在面向对象编程的过程中，难免会遇到一些场景，对象需要保存其私有的变量，不被外界所修改。这里总结一下JavaScript中，关于对象私有变量的问题。
+
+Javascript中的对象在JS中生成一个对象，构造函数是一个较为常用的方法。
+function Person(name,age){ 
+    this.name=name;
+    this.age=age;
+}
+
+var coy=new Per">
 
 
 
@@ -74,7 +98,7 @@
   };
 </script>
 
-  <title> Hello | Coy Blog </title>
+  <title> js中的私有变量 | Coy Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +251,7 @@
             
             
               
-                Hello
+                js中的私有变量
               
             
           </h1>
@@ -236,8 +260,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-08T21:54:25+08:00" content="2015-11-08">
-              2015-11-08
+            <time itemprop="dateCreated" datetime="2015-12-22T21:22:25+08:00" content="2015-12-22">
+              2015-12-22
             </time>
           </span>
 
@@ -246,8 +270,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/NonTech/" itemprop="url" rel="index">
-                    <span itemprop="name">NonTech</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -262,8 +286,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/08/Hello/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/08/Hello/" itemprop="commentsCount"></span>
+                <a href="/2015/12/22/js中的私有变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/22/js中的私有变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -288,11 +312,108 @@
       
 
       
-        <span itemprop="articleBody"><p>My name is Coy Pan and I am a fresh graduate.<br><br>When I was a child, I dreamed of becoming an astronomer.<br><br>Then I become a programmer.<br><br>During my spare time, I love to dance and do some sports.<br><br>During my work time, I write the code, fix the bug, fix the bug and fix the bug.<br><br>And one day, I will become a good FEer.<br><br>I am Coy Pan.<br></p>
-<h2 id="Main_body">Main body</h2><p>I write the paragraph above by imitating the opening of <strong><em><a href="http://baike.baidu.com/link?url=72hIUZzfaRPWo3MVk5RZn3GlnCrULgzPCuMd5zZNwerZzy9vcU9RtdpKmBozy80q1rJBDDdq2O540wRi_G9dzWtg-luaW66tF65N9KqqQO3" target="_blank" rel="external">the Flash</a></em></strong>.<br></p>
-<p>This site is built by <a href="https://pages.github.com" target="_blank" rel="external">github pages</a> and <a href="https://hexo.io" target="_blank" rel="external">hexo</a>. I plan to write something that I learn from studying and life here.<br></p>
-<p>Well, I already have a personal website <strong><em><a href="http://coypan.com" target="_blank" rel="external">coypan.com</a><br></em></strong></p>
-<p>My English is really poor. T T </p>
+        <span itemprop="articleBody"><blockquote>
+<p>在面向对象编程的过程中，难免会遇到一些场景，对象需要保存其私有的变量，不被外界所修改。这里总结一下JavaScript中，关于对象私有变量的问题。</p>
+</blockquote>
+<h2 id="Javascript中的对象">Javascript中的对象</h2><p>在JS中生成一个对象，<strong>构造函数</strong>是一个较为常用的方法。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>{ 
+    <span class="keyword">this</span>.name=name;
+    <span class="keyword">this</span>.age=age;
+}
+
+<span class="keyword">var</span> coy=<span class="keyword">new</span> Person(<span class="string">"coy"</span>,<span class="number">24</span>);
+<span class="built_in">console</span>.log(coy);<span class="comment">//{name:'coy',age:24}</span>
+</code></pre><p>在上面的例子中，构造了一个Person对象，coy是Person的一个实例。JS中构造对象的方法很多，这里就不再赘述了。</p>
+<h2 id="JS对象中的公共变量">JS对象中的公共变量</h2><pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>{ 
+    <span class="keyword">this</span>.name=name;
+    <span class="keyword">this</span>.age=age;
+}
+
+<span class="keyword">var</span> coy=<span class="keyword">new</span> Person(<span class="string">"coy"</span>,<span class="number">24</span>);
+<span class="built_in">console</span>.log(coy.name);<span class="comment">//coy</span>
+<span class="built_in">console</span>.log(coy.age);<span class="comment">//24;</span>
+coy.name=<span class="string">"ryan"</span>;
+<span class="built_in">console</span>.log(coy.name)<span class="comment">//ryan</span>
+</code></pre><p>继续看这个例子，name和age作为实例coy的属性，是可读可写的。</p>
+<p>接着上面的代码，再看下面的代码：</p>
+<pre><code>Person<span class="built_in">.</span><span class="keyword">type</span>={<span class="keyword">type</span>:<span class="string">"animal"</span>}；
+console<span class="built_in">.</span><span class="keyword">log</span>(coy<span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//undefined</span>
+console<span class="built_in">.</span><span class="keyword">log</span>(Person<span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//{type:"animal"}</span>
+
+<span class="built_in">var</span> alec=<span class="literal">new</span> Person(<span class="string">"alec"</span>,<span class="number">22</span>);
+console<span class="built_in">.</span><span class="keyword">log</span>(alec<span class="built_in">.</span>construct<span class="subst">or</span><span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//{type:"animal"}</span>
+console<span class="built_in">.</span><span class="keyword">log</span>(coy<span class="built_in">.</span>construct<span class="subst">or</span><span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//{type:"animal"}</span>
+console<span class="built_in">.</span><span class="keyword">log</span>(alec<span class="built_in">.</span>construct<span class="subst">or</span><span class="built_in">.</span><span class="keyword">type</span>===Person<span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//true</span>
+console<span class="built_in">.</span><span class="keyword">log</span>(alec<span class="built_in">.</span>construct<span class="subst">or</span><span class="built_in">.</span><span class="keyword">type</span>===coy<span class="built_in">.</span>construct<span class="subst">or</span><span class="built_in">.</span><span class="keyword">type</span>);<span class="comment">//true</span>
+</code></pre><p>直接在Person对象上赋值，Person对象的实例无法访问到type属性。而必须通过Person直接访问,而且每一次访问都是访问的同一个type,这里的type属性可以称为<strong>公共静态变量</strong>。当然，对于类似这样的函数，也被称为公共静态方法。</p>
+<p>虽说这样的公共静态变量非常方便，但是他可以直接读写，安全性是个问题。那么如何将其“保护”起来呢？</p>
+<h2 id="JS对象中的私有变量">JS对象中的私有变量</h2><p>为对象构造私有变量，有以下的方法。</p>
+<h3 id="构造函数法">构造函数法</h3><p>在构造函数中，使用var来声明的变量，就是对象的私有变量。看下面的代码：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>{ 
+    <span class="keyword">this</span>.name=name;
+    <span class="keyword">this</span>.age=age;
+    <span class="keyword">var</span> sex=<span class="string">"boy"</span>;
+}
+<span class="keyword">var</span> coy=<span class="keyword">new</span> Person(<span class="string">"coy"</span>,<span class="number">24</span>);
+<span class="keyword">var</span> alec=<span class="keyword">new</span> Person(<span class="string">"alec"</span>,<span class="number">22</span>); 
+
+<span class="built_in">console</span>.log(Person.sex);<span class="comment">//undefined</span>
+<span class="built_in">console</span>.log(coy.sex);<span class="comment">//undefined</span>
+</code></pre><p>可见，sex属性是无法被直接访问的。怎么样访问呢？</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>{ 
+    <span class="keyword">this</span>.name=name;
+    <span class="keyword">this</span>.age=age;
+    <span class="keyword">var</span> sex=<span class="string">"boy"</span>;
+
+    <span class="keyword">this</span>.getSex=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> sex;
+    }
+    <span class="keyword">this</span>.setSex=<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>{
+        sex=a;
+    }
+}
+<span class="keyword">var</span> coy=<span class="keyword">new</span> Person(<span class="string">"coy"</span>,<span class="number">24</span>);
+<span class="keyword">var</span> alec=<span class="keyword">new</span> Person(<span class="string">"alec"</span>,<span class="number">22</span>);
+alec.setSex(<span class="string">"girl"</span>);
+<span class="built_in">console</span>.log(coy.getSex());<span class="comment">//boy</span>
+<span class="built_in">console</span>.log(alec.getSex());<span class="comment">//girl</span>
+</code></pre><p>这里，在对象的构造函数内，声明了一个getSex的方法和setSex方法。通过这两个方法就可以访问到sex这个属性了。这里是由于JS的闭包和作用域机制。具体就不展开了。这里需要注意的是，Person原型上的方法是无法访问到sex这个属性的。像这种在构造函数内部定义的，可以访问到私有变量的方法被称为<strong>特权方法</strong>。</p>
+<p>这里有一个问题就是：每次实例化一个对象，就会声明一遍这些静态变量和特权方法。这是一种对资源的浪费。</p>
+<h3 id="立即执行函数法">立即执行函数法</h3><p>先看下面的代码：</p>
+<pre><code>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+
+    <span class="keyword">var</span> type=<span class="string">"animal"</span>;
+
+    Person=<span class="function"><span class="keyword">function</span>(<span class="params">name,age</span>)</span>{
+        <span class="keyword">this</span>.name=name;
+        <span class="keyword">this</span>.age=age;
+    }
+
+    Person.prototype.setType=<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>{
+        type=a;
+    }
+    Person.prototype.getType=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> type;
+    }
+})()
+
+<span class="keyword">var</span> coy=<span class="keyword">new</span> Person(<span class="string">"coy"</span>,<span class="number">24</span>);
+<span class="keyword">var</span> alec=<span class="keyword">new</span> Person(<span class="string">"alec"</span>,<span class="number">22</span>);
+<span class="built_in">console</span>.log(coy.getType());<span class="comment">//animal</span>
+<span class="built_in">console</span>.log(alec.getType());<span class="comment">//animal</span>
+
+alec.setType(<span class="string">"girl"</span>);
+<span class="built_in">console</span>.log(coy.getType());<span class="comment">//girl</span>
+<span class="built_in">console</span>.log(alec.getType());<span class="comment">//girl</span>
+</code></pre><ul>
+<li>使用一个立即执行的匿名函数将对象的声明代码包裹起来。这样，形成了一个特定的作用域。</li>
+<li>在该作用域中，使用var来声明了私有变量type。</li>
+<li>注意，对象的构造函数Person是直接声明的，没有使用var来声明，使得该构造函数成为了一个<strong>全局变量</strong>，可以在该特定作用域外访问。</li>
+<li>特权方法在构造函数的原型链上声明，对象实例化时，不用每次都声明一下这些特权方法了。</li>
+<li><strong>这种创建的私有变量是所有实例共享的</strong>。某一个实例对私有变量进行了修改，会影响所有的实例。这是因为JS的作用域链和闭包的缘故。</li>
+</ul>
+<p>JS中还有其他很多的设计模式都会涉及到私有变量的问题。Keep learing…</p>
+<p>p.s.<br>前几天写了一个小工具。详情见这里<a href="http://coypan.com/blog/fullpage-js-%E5%85%A8%E5%B1%8F%E7%AB%96%E7%9B%B4%E6%BB%9A%E5%8A%A8%E5%B0%8F%E5%B7%A5%E5%85%B7.html" target="_blank" rel="external">fullpage.js</a></p>
 </span>
       
     </div>
@@ -301,9 +422,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/English/" rel="tag">#English</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/essay/" rel="tag">#essay</a>
+            <a href="/tags/js对象/" rel="tag">#js对象</a>
+          
+            <a href="/tags/私有变量/" rel="tag">#私有变量</a>
           
         </div>
       
@@ -312,13 +435,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/11/12/JS的作用域以及命名空间/" rel="next" title="JS的作用域以及命名空间">
+                <i class="fa fa-chevron-left"></i> JS的作用域以及命名空间
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/12/JS的作用域以及命名空间/" rel="prev" title="JS的作用域以及命名空间">
-                JS的作用域以及命名空间 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +493,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/08/Hello/"
-           data-title="Hello" data-url="http://yoursite.com/2015/11/08/Hello/">
+      <div class="ds-thread" data-thread-key="2015/12/22/js中的私有变量/"
+           data-title="js中的私有变量" data-url="http://yoursite.com/2015/12/22/js中的私有变量/">
       </div>
     
   </div>
@@ -494,7 +617,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Main_body"><span class="nav-number">1.</span> <span class="nav-text">Main body</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript中的对象"><span class="nav-number">1.</span> <span class="nav-text">Javascript中的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS对象中的公共变量"><span class="nav-number">2.</span> <span class="nav-text">JS对象中的公共变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS对象中的私有变量"><span class="nav-number">3.</span> <span class="nav-text">JS对象中的私有变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数法"><span class="nav-number">3.1.</span> <span class="nav-text">构造函数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即执行函数法"><span class="nav-number">3.2.</span> <span class="nav-text">立即执行函数法</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
