@@ -55,23 +55,29 @@
 
 <meta name="description" content="所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-移动web开发学习笔记-1
-1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为">
+像素
+像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设备像素缩放比。计算公式 
+
+1p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动web开发学习笔记-1">
 <meta property="og:url" content="http://yoursite.com/2016/03/24/移动web开发学习笔记-1/index.html">
 <meta property="og:site_name" content="Coy Blog">
 <meta property="og:description" content="所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-移动web开发学习笔记-1
-1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为">
-<meta property="og:updated_time" content="2016-03-25T01:28:36.000Z">
+像素
+像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设备像素缩放比。计算公式 
+
+1p">
+<meta property="og:updated_time" content="2016-03-25T01:37:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动web开发学习笔记-1">
 <meta name="twitter:description" content="所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-移动web开发学习笔记-1
-1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为">
+像素
+像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设备像素缩放比。计算公式 
+
+1p">
 
 
 
@@ -300,16 +306,18 @@
         <span itemprop="articleBody"><blockquote>
 <p>所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。</p>
 </blockquote>
-<h1 id="移动web开发学习笔记-1">移动web开发学习笔记-1</h1><hr>
-<h2 id="1-1_像素">1.1 像素</h2><p>像素分为了<strong>逻辑像素</strong>和<strong>抽象像素</strong>。<br><br><strong>px</strong>  逻辑像素，浏览器使用的抽象单位。<br><br><strong>dp</strong>  设备无关像素，即物理像素。注意，<em>dip</em> 也表示同样的概念<br><br>两个的关系是由一个叫做 <strong>dpr</strong> 的值来决定的。dpr 被成为设备像素缩放比。<br><br><br>计算公式 </p>
+<h2 id="像素">像素</h2><hr>
+<p>像素分为了<strong>逻辑像素</strong>和<strong>抽象像素</strong>。<br><br><strong>px</strong>  逻辑像素，浏览器使用的抽象单位。<br><br><strong>dp</strong>  设备无关像素，即物理像素。注意，<em>dip</em> 也表示同样的概念<br><br>两个的关系是由一个叫做 <strong>dpr</strong> 的值来决定的。dpr 被成为设备像素缩放比。<br><br><br>计算公式 </p>
 <blockquote>
 <p>1px= 1dp / (dpr)² </p>
 </blockquote>
-<h2 id="1-2_手机屏幕">1.2 手机屏幕</h2><p><strong>手机屏幕尺寸</strong>：屏幕的对角线的长度，单位是英寸。<br><br><strong>屏幕分辨率</strong>：指在横纵向上的像素点数，单位是px，1px = 1个像素点。一般以纵向像素×横向像素来表示一个手机的分辨率，如1960×1080。（这里的1像素指的是物理设备的一像素点）。<br><br><strong>屏幕像素密度</strong>：屏幕上每英寸可以显示的像素点的数量，单位是 <strong>ppi</strong> (pixels per inch)。注意：<em>dpi</em> 也表示一样的概念。一般android设备使用该单位<br><br><br>计算像素密度的公式为（以1960×1080像素5英寸为例）<br></p>
+<h2 id="手机屏幕">手机屏幕</h2><hr>
+<p><strong>手机屏幕尺寸</strong>：屏幕的对角线的长度，单位是英寸。<br><br><strong>屏幕分辨率</strong>：指在横纵向上的像素点数，单位是px，1px = 1个像素点。一般以纵向像素×横向像素来表示一个手机的分辨率，如1960×1080。（这里的1像素指的是物理设备的一像素点）。<br><br><strong>屏幕像素密度</strong>：屏幕上每英寸可以显示的像素点的数量，单位是 <strong>ppi</strong> (pixels per inch)。注意：<em>dpi</em> 也表示一样的概念。一般android设备使用该单位<br><br><br>计算像素密度的公式为（以1960×1080像素5英寸为例）<br></p>
 <blockquote>
 <p>( √（1920²+1080²）) / 5 = 440 ppi  // 先求出对角线像素点数，再除以手机频幕尺寸</p>
 </blockquote>
-<h2 id="1-3_dpr(设备缩放比)的确定">1.3 dpr(设备缩放比)的确定</h2><p>android和iphone都是根据ppi来确定dpr的，但是两者的标准不一样。<br><br><br>android的标准如下：</p>
+<h2 id="dpr(设备缩放比)的确定">dpr(设备缩放比)的确定</h2><hr>
+<p>android和iphone都是根据ppi来确定dpr的，但是两者的标准不一样。<br><br><br>android的标准如下：</p>
 <pre><code>名称                dpi范围                dpr的值
 ldpi                &lt;<span class="number">120</span>                     <span class="number">1</span>
 mdpi                <span class="number">120</span> - <span class="number">160</span>                <span class="number">1</span>
@@ -322,7 +330,8 @@ xxxhdpi             <span class="number">480</span> - <span class="number">640</
 非高清屏(non-retina)             <span class="number">1</span>
 高清屏（retina)                  <span class="number">2</span>
 超高清屏 (retina HD)             <span class="number">3</span>
-</code></pre><p>##1.4 总结 ##<br>我们在进行移动web开发的时候，需要先进行逻辑像素值的确定，即需要知道在浏览器环境下的px与设备的px是什么关系。下面以iphone5为例。</p>
+</code></pre><h2 id="总结">总结</h2><hr>
+<p>我们在进行移动web开发的时候，需要先进行逻辑像素值的确定，即需要知道在浏览器环境下的px与设备的px是什么关系。下面以iphone5为例。</p>
 <ul>
 <li><p>iphone5的设备分辨率为 1136dp × 640dp.</p>
 </li>
@@ -540,7 +549,7 @@ xxxhdpi             <span class="number">480</span> - <span class="number">640</
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动web开发学习笔记-1"><span class="nav-number">1.</span> <span class="nav-text">移动web开发学习笔记-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1_像素"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2_手机屏幕"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 手机屏幕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3_dpr(设备缩放比)的确定"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 dpr(设备缩放比)的确定</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#像素"><span class="nav-number">1.</span> <span class="nav-text">像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手机屏幕"><span class="nav-number">2.</span> <span class="nav-text">手机屏幕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dpr(设备缩放比)的确定"><span class="nav-number">3.</span> <span class="nav-text">dpr(设备缩放比)的确定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
