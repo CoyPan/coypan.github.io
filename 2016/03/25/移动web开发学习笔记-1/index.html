@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,js命名空间,js的作用域," />
+  <meta name="keywords" content="coypan,blog,潘柯宇,博客" />
 
 
 
@@ -53,30 +53,22 @@
 
 
 
-<meta name="description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta name="description" content="移动web开发学习笔记-1所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
+1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS的作用域以及命名空间">
-<meta property="og:url" content="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/index.html">
+<meta property="og:title" content="Coy Blog">
+<meta property="og:url" content="http://yoursite.com/2016/03/25/移动web开发学习笔记-1/index.html">
 <meta property="og:site_name" content="Coy Blog">
-<meta property="og:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta property="og:description" content="移动web开发学习笔记-1所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
-<meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:image" content="http://yoursite.com/images/2.png">
-<meta property="og:updated_time" content="2015-12-22T13:29:16.000Z">
+1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设">
+<meta property="og:updated_time" content="2016-03-25T01:13:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS的作用域以及命名空间">
-<meta name="twitter:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta name="twitter:title" content="Coy Blog">
+<meta name="twitter:description" content="移动web开发学习笔记-1所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
+1.1 像素像素分为了逻辑像素和抽象像素。px  逻辑像素，浏览器使用的抽象单位。dp  设备无关像素，即物理像素。注意，dip 也表示同样的概念两个的关系是由一个叫做 dpr 的值来决定的。dpr 被成为设">
 
 
 
@@ -88,7 +80,7 @@ function f(){    var bb=”123”;    va">
   };
 </script>
 
-  <title> JS的作用域以及命名空间 | Coy Blog </title>
+  <title>  | Coy Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +233,7 @@ function f(){    var bb=”123”;    va">
             
             
               
-                JS的作用域以及命名空间
+                
               
             
           </h1>
@@ -250,34 +242,19 @@ function f(){    var bb=”123”;    va">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-12T23:30:25+08:00" content="2015-11-12">
-              2015-11-12
+            <time itemprop="dateCreated" datetime="2016-03-25T09:13:19+08:00" content="2016-03-25">
+              2016-03-25
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/12/JS的作用域以及命名空间/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/JS的作用域以及命名空间/" itemprop="commentsCount"></span>
+                <a href="/2016/03/25/移动web开发学习笔记-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/25/移动web开发学习笔记-1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,18 +279,41 @@ function f(){    var bb=”123”;    va">
       
 
       
-        <span itemprop="articleBody"><blockquote>
-<p>之前写过一篇博客，总结了一下<a href="http://coypan.com/blog/javascript-关于变量的全面总结.html" target="_blank" rel="external">JS变量</a>。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  </p>
+        <span itemprop="articleBody"><h1 id="移动web开发学习笔记-1">移动web开发学习笔记-1</h1><p>所谓移动web开发，就是开发适配于移动端、主要是手机端的web页面，也就是常说的H5页面。移动web开发跟pc端的web开发有很大的不同，坑更多。先从基础入手吧。</p>
+<hr>
+<h2 id="1-1_像素">1.1 像素</h2><p>像素分为了<strong>逻辑像素</strong>和<strong>抽象像素</strong>。<br><br><strong>px</strong>  逻辑像素，浏览器使用的抽象单位。<br><br><strong>dp</strong>  设备无关像素，即物理像素。注意，<em>dip</em> 也表示同样的概念<br><br>两个的关系是由一个叫做 <strong>dpr</strong> 的值来决定的。dpr 被成为设备像素缩放比。<br><br><br>计算公式 </p>
+<blockquote>
+<p>1px= 1dp / (dpr)² </p>
 </blockquote>
-<h2 id="JS的作用域">JS的作用域</h2><hr>
-<p>JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在<strong>代码解析阶段</strong>就完成的，<strong>不是</strong>在执行阶段。用以下的例子就可以说明:      </p>
-<p><pre><code>function f(){<br>    var bb=”123”;<br>    var aa=function(){<br>        console.log(bb);<br>    }<br>    return aa;<br>}<br>function cc(para){<br>    var bb=para;<br>    var func=f();<br>    func();<br>}<br>cc(“111”);<br></code></pre><br>这段代码的输出是:”123”，而不是”111”。这是因为在声明函数的时候，函数f及其内部aa指向的匿名函数的作用域、作用域链就已经确定了。该匿名函数的作用域链为：aa-&gt;f-&gt;window.<br>在cc函数中，func函数指向的也是aa指向的函数，是同一个函数。所以在cc执行的时候，func指向的那个匿名函数是读不到func外部，cc内部的那个bb变量的，只能沿着其作用域链aa-&gt;f-&gt;window向上走，在f函数的作用域内找到了bb=”123”.将其输出.  </p>
-<h2 id="html页面中JS的作用域">html页面中JS的作用域</h2><hr>
-<p>这个问题很简单。先看下面这段代码：<br><img src="/images/1.png" style="width: 600px;"><br>首先在页面顶部引入了test.js.这里，test.js的代码如下：  </p>
-<p><pre><code>function func1(){<br>    console.log(“this is func1”);<br>}<br></code></pre><br>接着，又在一个新的<code>script</code>标签内调用了这个func1函数。这个函数成功执行了。也就是说，在一个html文件中，所有的JS代码，不管是引入的，还是嵌在页面中的，都是在一个作用域内，这个最大的作用域就是window.好吧，其实这是十分显而易见的。我这不是废话么。 </p>
-<h2 id="JS的命名空间">JS的命名空间</h2><hr>
-<p>说到自己写的那个很搓的库myComponent.js，开始写的时候，我是按照impress.js那个模式来写的。库代码的模板为:  </p>
-<p><pre><code>(function (window,document){<br>    …<br>    …<br>    var myComponent = window.myComponent = (function () {<br>        var init = function () {<br>            …<br>        }<br>        return {<br>            init: init<br>        }<br>    })()<br>})(window,document)<br></code></pre><br>而使用这个库的时候，只需要在html文件中，引入myComponent.js并且使用<code>myComponent.init()</code>就行了。像下面这样:<br><img src="/images/2.png" style="width: 600px;"><br>其实，这里就涉及到了<strong>命名空间</strong>。<br>使用一个<strong>立即执行的匿名函数</strong>来完成整个库的逻辑，在这个匿名函数外部是访问不到函数内部的变量的，然后在<strong>window对象上「注册」一个变量myComponent</strong>,而这个myComponent其实是一个接口，使得可以在html文件中调用这个库。这样封装的好处就是:库文件内的代码和外部的代码完全隔离，互不影响，不会出现因变量名相同而导致的代码混乱。    </p>
+<h2 id="1-2_手机屏幕">1.2 手机屏幕</h2><p><strong>手机屏幕尺寸</strong>：屏幕的对角线的长度，单位是英寸。<br><br><strong>屏幕分辨率</strong>：指在横纵向上的像素点数，单位是px，1px = 1个像素点。一般以纵向像素×横向像素来表示一个手机的分辨率，如1960×1080。（这里的1像素指的是物理设备的一像素点）。<br><br><strong>屏幕像素密度</strong>：屏幕上每英寸可以显示的像素点的数量，单位是 <strong>ppi</strong> (pixels per inch)。注意：<em>dpi</em> 也表示一样的概念。一般android设备使用该单位<br><br><br>计算像素密度的公式为（以1960×1080像素5英寸为例）<br></p>
+<blockquote>
+<p>( √（1920²+1080²）) / 5 = 440 ppi  // 先求出对角线像素点数，再除以手机频幕尺寸</p>
+</blockquote>
+<h2 id="1-3_dpr(设备缩放比)的确定">1.3 dpr(设备缩放比)的确定</h2><p>android和iphone都是根据ppi来确定dpr的，但是两者的标准不一样。<br><br><br>android的标准如下：</p>
+<pre><code>名称                dpi范围                dpr的值
+ldpi                &lt;<span class="number">120</span>                     <span class="number">1</span>
+mdpi                <span class="number">120</span> - <span class="number">160</span>                <span class="number">1</span>
+hdpi                <span class="number">160</span> - <span class="number">240</span>                <span class="number">1.5</span>
+xhdpi               <span class="number">240</span> - <span class="number">320</span>                <span class="number">2</span>
+xxhdpi              <span class="number">320</span> - <span class="number">480</span>                <span class="number">3</span>
+xxxhdpi             <span class="number">480</span> - <span class="number">640</span>                <span class="number">4</span>
+</code></pre><p>iphone的标准如下：</p>
+<pre><code>名称                         dpr的值
+非高清屏(non-retina)             <span class="number">1</span>
+高清屏（retina)                  <span class="number">2</span>
+超高清屏 (retina HD)             <span class="number">3</span>
+</code></pre><p>##1.4 总结 ##<br>我们在进行移动web开发的时候，需要先进行逻辑像素值的确定，即需要知道在浏览器环境下的px与设备的px是什么关系。下面以iphone5为例。</p>
+<ul>
+<li><p>iphone5的设备分辨率为 1136dp × 640dp.</p>
+</li>
+<li><p>计算其ppi.( √（1136²+640²）) / 4 = 326 ppi.</p>
+</li>
+<li><p>在ios的标准中，iphone5的屏幕为retina，其dpr值为2.（其实对于iphone，不用计算其ppi，直接根据屏幕类型就能确定dpr）.</p>
+</li>
+<li><p>根据公式  1px= 1dp / (dpr)² , iphone5的屏幕的逻辑像素为：320px × 568px</p>
+</li>
+</ul>
+<p>那么问题来了，当我在页面上声明一个 320px × 568px 大小的div时，并不能占满整个屏幕，这是怎么回事呢？其实是因为没有正确设置<strong>viewpoint</strong>.</p>
 <p>以上。</p>
 </span>
       
@@ -321,32 +321,18 @@ function f(){    var bb=”123”;    va">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
-            <a href="/tags/js命名空间/" rel="tag">#js命名空间</a>
-          
-            <a href="/tags/js的作用域/" rel="tag">#js的作用域</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/08/Hello/" rel="next" title="Hello">
-                <i class="fa fa-chevron-left"></i> Hello
+              <a href="/2015/12/22/js中的私有变量/" rel="next" title="js中的私有变量">
+                <i class="fa fa-chevron-left"></i> js中的私有变量
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/22/js中的私有变量/" rel="prev" title="js中的私有变量">
-                js中的私有变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +384,8 @@ function f(){    var bb=”123”;    va">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/12/JS的作用域以及命名空间/"
-           data-title="JS的作用域以及命名空间" data-url="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/">
+      <div class="ds-thread" data-thread-key="2016/03/25/移动web开发学习笔记-1/"
+           data-title="" data-url="http://yoursite.com/2016/03/25/移动web开发学习笔记-1/">
       </div>
     
   </div>
@@ -522,7 +508,7 @@ function f(){    var bb=”123”;    va">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的作用域"><span class="nav-number">1.</span> <span class="nav-text">JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html页面中JS的作用域"><span class="nav-number">2.</span> <span class="nav-text">html页面中JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的命名空间"><span class="nav-number">3.</span> <span class="nav-text">JS的命名空间</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#移动web开发学习笔记-1"><span class="nav-number">1.</span> <span class="nav-text">移动web开发学习笔记-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1_像素"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2_手机屏幕"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 手机屏幕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3_dpr(设备缩放比)的确定"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 dpr(设备缩放比)的确定</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
