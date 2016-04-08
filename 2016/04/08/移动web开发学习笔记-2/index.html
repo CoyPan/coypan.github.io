@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,js命名空间,js的作用域," />
+  <meta name="keywords" content="meta,viewport,移动web," />
 
 
 
@@ -53,30 +53,22 @@
 
 
 
-<meta name="description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta name="description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
+什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS的作用域以及命名空间">
-<meta property="og:url" content="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/index.html">
+<meta property="og:title" content="移动web开发学习笔记-2">
+<meta property="og:url" content="http://yoursite.com/2016/04/08/移动web开发学习笔记-2/index.html">
 <meta property="og:site_name" content="Coy Blog">
-<meta property="og:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta property="og:description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
-<meta property="og:image" content="http://yoursite.com/images/1.png">
-<meta property="og:image" content="http://yoursite.com/images/2.png">
-<meta property="og:updated_time" content="2015-12-22T13:29:16.000Z">
+什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
+<meta property="og:updated_time" content="2016-04-08T12:20:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS的作用域以及命名空间">
-<meta name="twitter:description" content="之前写过一篇博客，总结了一下JS变量。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  
+<meta name="twitter:title" content="移动web开发学习笔记-2">
+<meta name="twitter:description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
 
-JS的作用域
-JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在代码解析阶段就完成的，不是在执行阶段。用以下的例子就可以说明:      
-function f(){    var bb=”123”;    va">
+什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
 
 
 
@@ -88,7 +80,7 @@ function f(){    var bb=”123”;    va">
   };
 </script>
 
-  <title> JS的作用域以及命名空间 | Coy Blog </title>
+  <title> 移动web开发学习笔记-2 | Coy Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +233,7 @@ function f(){    var bb=”123”;    va">
             
             
               
-                JS的作用域以及命名空间
+                移动web开发学习笔记-2
               
             
           </h1>
@@ -250,8 +242,8 @@ function f(){    var bb=”123”;    va">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-12T23:30:25+08:00" content="2015-11-12">
-              2015-11-12
+            <time itemprop="dateCreated" datetime="2016-04-08T20:17:25+08:00" content="2016-04-08">
+              2016-04-08
             </time>
           </span>
 
@@ -260,8 +252,8 @@ function f(){    var bb=”123”;    va">
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/移动web/" itemprop="url" rel="index">
+                    <span itemprop="name">移动web</span>
                   </a>
                 </span>
 
@@ -276,8 +268,8 @@ function f(){    var bb=”123”;    va">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/12/JS的作用域以及命名空间/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/JS的作用域以及命名空间/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/移动web开发学习笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/移动web开发学习笔记-2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -303,19 +295,37 @@ function f(){    var bb=”123”;    va">
 
       
         <span itemprop="articleBody"><blockquote>
-<p>之前写过一篇博客，总结了一下<a href="http://coypan.com/blog/javascript-关于变量的全面总结.html" target="_blank" rel="external">JS变量</a>。前段时间开始试着写自己的库的时候，有遇到了一些问题，发现自己有些东西还没有完全的刻在脑子里，这里再总结一下。  </p>
+<p>通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。</p>
 </blockquote>
-<h2 id="JS的作用域">JS的作用域</h2><hr>
-<p>JS是没有块级作用域的（这里不说ES6）。JS中，函数，变量的作用域以及作用域链是在<strong>代码解析阶段</strong>就完成的，<strong>不是</strong>在执行阶段。用以下的例子就可以说明:      </p>
-<p><pre><code>function f(){<br>    var bb=”123”;<br>    var aa=function(){<br>        console.log(bb);<br>    }<br>    return aa;<br>}<br>function cc(para){<br>    var bb=para;<br>    var func=f();<br>    func();<br>}<br>cc(“111”);<br></code></pre><br>这段代码的输出是:”123”，而不是”111”。这是因为在声明函数的时候，函数f及其内部aa指向的匿名函数的作用域、作用域链就已经确定了。该匿名函数的作用域链为：aa-&gt;f-&gt;window.<br>在cc函数中，func函数指向的也是aa指向的函数，是同一个函数。所以在cc执行的时候，func指向的那个匿名函数是读不到func外部，cc内部的那个bb变量的，只能沿着其作用域链aa-&gt;f-&gt;window向上走，在f函数的作用域内找到了bb=”123”.将其输出.  </p>
-<h2 id="html页面中JS的作用域">html页面中JS的作用域</h2><hr>
-<p>这个问题很简单。先看下面这段代码：<br><img src="/images/1.png" style="width: 600px;"><br>首先在页面顶部引入了test.js.这里，test.js的代码如下：  </p>
-<p><pre><code>function func1(){<br>    console.log(“this is func1”);<br>}<br></code></pre><br>接着，又在一个新的<code>script</code>标签内调用了这个func1函数。这个函数成功执行了。也就是说，在一个html文件中，所有的JS代码，不管是引入的，还是嵌在页面中的，都是在一个作用域内，这个最大的作用域就是window.好吧，其实这是十分显而易见的。我这不是废话么。 </p>
-<h2 id="JS的命名空间">JS的命名空间</h2><hr>
-<p>说到自己写的那个很搓的库myComponent.js，开始写的时候，我是按照impress.js那个模式来写的。库代码的模板为:  </p>
-<p><pre><code>(function (window,document){<br>    …<br>    …<br>    var myComponent = window.myComponent = (function () {<br>        var init = function () {<br>            …<br>        }<br>        return {<br>            init: init<br>        }<br>    })()<br>})(window,document)<br></code></pre><br>而使用这个库的时候，只需要在html文件中，引入myComponent.js并且使用<code>myComponent.init()</code>就行了。像下面这样:<br><img src="/images/2.png" style="width: 600px;"><br>其实，这里就涉及到了<strong>命名空间</strong>。<br>使用一个<strong>立即执行的匿名函数</strong>来完成整个库的逻辑，在这个匿名函数外部是访问不到函数内部的变量的，然后在<strong>window对象上「注册」一个变量myComponent</strong>,而这个myComponent其实是一个接口，使得可以在html文件中调用这个库。这样封装的好处就是:库文件内的代码和外部的代码完全隔离，互不影响，不会出现因变量名相同而导致的代码混乱。    </p>
-<p>以上。</p>
-</span>
+<h1 id="什么是viewport">什么是viewport</h1><p>这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏览器上也可以正常的浏览网站，即使是那些不是在移动设备上设计的网站。那么问题来了，就人的直观上来说，跟PC相比，手机的屏幕这么小（viewport小），怎么样让那些为PC设计的网站完美的在手机上显示呢？<br><br>这就需要将页面等比例的缩小。缩小页面的过程中，会有一个问题，如果直接将网页按照移动设备的屏幕大小来进行缩放，那么很多网页就会因为viewport太窄而出现布局错乱，字太小，看不清等。<br><br>移动设备浏览器就为了我们做了两件事：<br></p>
+<ul>
+<li>先将页面渲染在一个较大的viewport中，保证页面排版正确。</li>
+<li>然后再进行缩放，让用户能够看得正确。</li>
+</ul>
+<p>我们将用来排版的那个大的viewport叫做<strong>layout viewport</strong>。这个layout viewport的宽度可以使用<strong>document.body.clientWidth</strong>来获取。这个viewport是一个虚拟的概念。一般情况下，layout viewport都是大于移动设备的屏幕宽度的。每种移动设备的layout viewport都不一样。iphone是980px，安卓设备各有差异。<br></p>
+<p>我们将移动设备浏览器可视区域的宽度叫做<strong>visual layout</strong>。这个visual layout的宽度可以通过<strong>window.innerWidth</strong>来获取。需要注意的是，只有在正确设置了meta标签后，这里的innerWidth的值才跟设备的可视区域相等。在没有设置的meta标签时，这个值等于网页文档的width值，由网页内容决定。<br></p>
+<p>为了让页面完美显示（不需要用户缩放和横向滚动条就能正常的查看网站的所有内容；显示的文字的大小是合适的），我们需要对上述的viewport进行改造。而改造viewport，就需要设置meta标签。</p>
+<h1 id="利用meta标签对viewport进行控制">利用meta标签对viewport进行控制</h1><p>在开发移动设备的网站时，最常见的的一个动作就是把下面这个东西复制到我们的head标签中：</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;
+</code></pre><p>该meta标签的含义就是：<strong>visual viewport = 设备可视区域宽度 = layout viewport</strong><br><br>这是最适合移动设备的viewport的设置。</p>
+<p>下面是meta viewport的详细规范。</p>
+<pre><code><span class="variable">width</span>           设置layout viewport的宽度。值为一个正整数或者『device-<span class="variable">width</span>』。
+                device-<span class="variable">width</span>表示与设备宽度同宽。
+initial-<span class="built_in">scale</span>   设置页面的初始缩放值。
+minimum-<span class="built_in">scale</span>   设置页面的最小缩放值。
+maximum-<span class="built_in">scale</span>   设置页面的最大缩放值。
+user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<span class="number">1</span>或者<span class="number">0</span>
+</code></pre><p>下面有几个地方需要注意一下：<br></p>
+<ul>
+<li>在没有设置缩放，只设置了width属性时，如果页面的宽度大于了设备的宽度，则window.innerWidth的值为页面的宽度，也就是可视区域的宽度，此时的缩放比为：window.innerWidth/document.body.clientWidth，浏览器会自动进行缩放，使得不会出现横向滚动条。</li>
+<li>在同时设置了缩放比，以及width属性的情况下，如果页面的宽度大于了设备的宽度，并且此时按照widow.innerWidth/document.body.clientWidth计算出来的缩放比与设置的缩放比不一致时，会按照设置的initial-scale进行缩放，会出现横向滚动条。</li>
+</ul>
+<p>其实绕了这么多，我也晕了。最后总结起来就是：<br></p>
+<pre><code><span class="title">width</span> = device-width  &lt;==&gt;  layout <span class="foreign"><span class="keyword">port</span> = 设备宽度</span>
+<span class="title">initial</span>-scale = <span class="number">1</span>     &lt;==&gt;  visual <span class="foreign"><span class="keyword">port</span> = layout <span class="keyword">port</span></span>
+</code></pre><p>最常用的，最佳的viewport的设置为：</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0"</span>&gt;
+</code></pre></span>
       
     </div>
 
@@ -323,11 +333,11 @@ function f(){    var bb=”123”;    va">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/meta/" rel="tag">#meta</a>
           
-            <a href="/tags/js命名空间/" rel="tag">#js命名空间</a>
+            <a href="/tags/viewport/" rel="tag">#viewport</a>
           
-            <a href="/tags/js的作用域/" rel="tag">#js的作用域</a>
+            <a href="/tags/移动web/" rel="tag">#移动web</a>
           
         </div>
       
@@ -336,17 +346,13 @@ function f(){    var bb=”123”;    va">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/08/Hello/" rel="next" title="Hello">
-                <i class="fa fa-chevron-left"></i> Hello
+              <a href="/2016/03/24/移动web开发学习笔记-1/" rel="next" title="移动web开发学习笔记-1">
+                <i class="fa fa-chevron-left"></i> 移动web开发学习笔记-1
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/22/js中的私有变量/" rel="prev" title="js中的私有变量">
-                js中的私有变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +404,8 @@ function f(){    var bb=”123”;    va">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/12/JS的作用域以及命名空间/"
-           data-title="JS的作用域以及命名空间" data-url="http://yoursite.com/2015/11/12/JS的作用域以及命名空间/">
+      <div class="ds-thread" data-thread-key="2016/04/08/移动web开发学习笔记-2/"
+           data-title="移动web开发学习笔记-2" data-url="http://yoursite.com/2016/04/08/移动web开发学习笔记-2/">
       </div>
     
   </div>
@@ -522,7 +528,7 @@ function f(){    var bb=”123”;    va">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的作用域"><span class="nav-number">1.</span> <span class="nav-text">JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html页面中JS的作用域"><span class="nav-number">2.</span> <span class="nav-text">html页面中JS的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的命名空间"><span class="nav-number">3.</span> <span class="nav-text">JS的命名空间</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是viewport"><span class="nav-number">1.</span> <span class="nav-text">什么是viewport</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用meta标签对viewport进行控制"><span class="nav-number">2.</span> <span class="nav-text">利用meta标签对viewport进行控制</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
