@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="meta,viewport,移动web," />
+  <meta name="keywords" content="响应式注意事项,响应式设计,移动web," />
 
 
 
@@ -53,22 +53,28 @@
 
 
 
-<meta name="description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
+<meta name="description" content="之前总结了移动web开发的一些基础知识点。下面总结一下在进行移动web开发的时候需要注意的一些问题。
 
-什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
+响应式设计
+flex布局flex布局是css3的一个重要特性。关于flex布局的具体内容，可以查看阮一峰大神的博客,链接
+媒体查询媒体查询是响应式设计的一个重点。什么是媒体查询呢？媒体查询就是在css样式中，首先判断不同的设备，为不同的设备设置不同的css属性。这里对设备的判断不需要用js来完成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动web开发学习笔记-2">
-<meta property="og:url" content="http://yoursite.com/2016/04/08/移动web开发学习笔记-2/index.html">
+<meta property="og:title" content="移动web开发学习笔记3-响应式开发">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/移动web开发学习笔记3-响应式开发/index.html">
 <meta property="og:site_name" content="Coy Blog">
-<meta property="og:description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
+<meta property="og:description" content="之前总结了移动web开发的一些基础知识点。下面总结一下在进行移动web开发的时候需要注意的一些问题。
 
-什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
-<meta property="og:updated_time" content="2016-04-08T12:20:11.000Z">
+响应式设计
+flex布局flex布局是css3的一个重要特性。关于flex布局的具体内容，可以查看阮一峰大神的博客,链接
+媒体查询媒体查询是响应式设计的一个重点。什么是媒体查询呢？媒体查询就是在css样式中，首先判断不同的设备，为不同的设备设置不同的css属性。这里对设备的判断不需要用js来完成">
+<meta property="og:updated_time" content="2016-04-30T12:53:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动web开发学习笔记-2">
-<meta name="twitter:description" content="通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。
+<meta name="twitter:title" content="移动web开发学习笔记3-响应式开发">
+<meta name="twitter:description" content="之前总结了移动web开发的一些基础知识点。下面总结一下在进行移动web开发的时候需要注意的一些问题。
 
-什么是viewport这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏">
+响应式设计
+flex布局flex布局是css3的一个重要特性。关于flex布局的具体内容，可以查看阮一峰大神的博客,链接
+媒体查询媒体查询是响应式设计的一个重点。什么是媒体查询呢？媒体查询就是在css样式中，首先判断不同的设备，为不同的设备设置不同的css属性。这里对设备的判断不需要用js来完成">
 
 
 
@@ -80,7 +86,7 @@
   };
 </script>
 
-  <title> 移动web开发学习笔记-2 | Coy Blog </title>
+  <title> 移动web开发学习笔记3-响应式开发 | Coy Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -233,7 +239,7 @@
             
             
               
-                移动web开发学习笔记-2
+                移动web开发学习笔记3-响应式开发
               
             
           </h1>
@@ -242,8 +248,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-04-08T20:17:25+08:00" content="2016-04-08">
-              2016-04-08
+            <time itemprop="dateCreated" datetime="2016-04-30T20:52:25+08:00" content="2016-04-30">
+              2016-04-30
             </time>
           </span>
 
@@ -268,8 +274,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/08/移动web开发学习笔记-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/移动web开发学习笔记-2/" itemprop="commentsCount"></span>
+                <a href="/2016/04/30/移动web开发学习笔记3-响应式开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/移动web开发学习笔记3-响应式开发/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -295,36 +301,63 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>通过上一篇文章，已经知道了css中的1px并不等于设备的1px。在移动设备上进行网页的重构或开发，首先得搞明白的就是移动设备上的viewport了，只有明白了viewport的概念以及弄清楚了跟viewport有关的meta标签的使用，才能更好地让我们的网页适配或响应各种不同分辨率的移动设备。</p>
+<p>之前总结了移动web开发的一些基础知识点。下面总结一下在进行移动web开发的时候需要注意的一些问题。</p>
 </blockquote>
-<h1 id="什么是viewport">什么是viewport</h1><p>这里，先将viewport理解为视口的意思吧。对于用户来说，希望在移动设备上的浏览器上也可以正常的浏览网站，即使是那些不是在移动设备上设计的网站。那么问题来了，就人的直观上来说，跟PC相比，手机的屏幕这么小（viewport小），怎么样让那些为PC设计的网站完美的在手机上显示呢？<br><br>这就需要将页面等比例的缩小。缩小页面的过程中，会有一个问题，如果直接将网页按照移动设备的屏幕大小来进行缩放，那么很多网页就会因为viewport太窄而出现布局错乱，字太小，看不清等。<br><br>移动设备浏览器就为了我们做了两件事：<br></p>
-<ul>
-<li>先将页面渲染在一个较大的viewport中，保证页面排版正确。</li>
-<li>然后再进行缩放，让用户能够看得正确。</li>
+<h2 id="响应式设计">响应式设计</h2><hr>
+<h3 id="flex布局">flex布局</h3><p>flex布局是css3的一个重要特性。关于flex布局的具体内容，可以查看阮一峰大神的博客,<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">链接</a></p>
+<h3 id="媒体查询">媒体查询</h3><p>媒体查询是响应式设计的一个重点。什么是媒体查询呢？媒体查询就是在css样式中，首先判断不同的设备，为不同的设备设置不同的css属性。这里对设备的判断不需要用js来完成，而是直接由css完成的。媒体查询的语法如下</p>
+<pre><code>@media screen and (<span class="built_in">min</span>-<span class="variable">width</span>:<span class="number">640</span>px) and (<span class="built_in">max</span>-<span class="variable">width</span>:<span class="number">1024</span>px){
+    body{
+        <span class="built_in">background</span>-<span class="built_in">color</span>:<span class="built_in">red</span>
+    }
+}
+</code></pre><p>上面的例子表示的意思是：当屏幕的宽度大于等于640px，小于等于1024px的时候，body的背景颜色为红色。媒体查询也可以针对不同的媒体使用不同的stylesheets:</p>
+<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">media</span>=<span class="value">"screen and (min-width:800px) and (max-width:1024px)"</span> <span class="attribute">href</span>=<span class="value">"mystyle.css"</span>&gt;</span>
+</code></pre><p>在媒体查询中，media 后面紧跟的表示媒体类型，其值可以为：screen(屏幕)，print（打印机），handheld（手持设备），all（通用） 等等。一般为 screen。后边括号里的 min-width 表示媒体功能，其他的值参考<a href="http://www.runoob.com/cssref/css3-pr-mediaquery.html" target="_blank" rel="external">这里</a>。两者中间的and被称为关键字，其他关键字还包括not ( 排除某种设备 ) ,only ( 限定某种设备 ) .</p>
+<h3 id="注意事项">注意事项</h3><ul>
+<li>使用百分比布局</li>
+<li>使用弹性图片。所谓弹性图片，即给图片加上CSS样式：<strong>max-width:100%</strong>. 然后再其外部加上一个div，将图片包裹。该div需要设置响应式样式。这样的话，图片就可以随着页面大小的变化而等比缩放。需要注意的是，如果给图片设置width:100%，则比div宽度小的图片也会被等比放大成外部div的宽度。</li>
+<li>重新布局，注意显示和隐藏不必要的元素。经常需要切换位置的元素可以将其设置为绝对定位，这样可以提高渲染的性能。</li>
 </ul>
-<p>我们将用来排版的那个大的viewport叫做<strong>layout viewport</strong>。这个layout viewport的宽度可以使用<strong>document.body.clientWidth</strong>来获取。这个viewport是一个虚拟的概念。一般情况下，layout viewport都是大于移动设备的屏幕宽度的。每种移动设备的layout viewport都不一样。iphone是980px，安卓设备各有差异。<br></p>
-<p>我们将移动设备浏览器可视区域的宽度叫做<strong>visual layout</strong>。这个visual layout的宽度可以通过<strong>window.innerWidth</strong>来获取。需要注意的是，只有在正确设置了meta标签后，这里的innerWidth的值才跟设备的可视区域相等。在没有设置的meta标签时，这个值等于网页文档的width值，由网页内容决定。<br></p>
-<p>为了让页面完美显示（不需要用户缩放和横向滚动条就能正常的查看网站的所有内容；显示的文字的大小是合适的），我们需要对上述的viewport进行改造。而改造viewport，就需要设置meta标签。</p>
-<h1 id="利用meta标签对viewport进行控制">利用meta标签对viewport进行控制</h1><p>在开发移动设备的网站时，最常见的的一个动作就是把下面这个东西复制到我们的head标签中：</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;
-</code></pre><p>该meta标签的含义就是：<strong>visual viewport = 设备可视区域宽度 = layout viewport</strong><br><br>这是最适合移动设备的viewport的设置。</p>
-<p>下面是meta viewport的详细规范。</p>
-<pre><code><span class="variable">width</span>           设置layout viewport的宽度。值为一个正整数或者『device-<span class="variable">width</span>』。
-                device-<span class="variable">width</span>表示与设备宽度同宽。
-initial-<span class="built_in">scale</span>   设置页面的初始缩放值。
-minimum-<span class="built_in">scale</span>   设置页面的最小缩放值。
-maximum-<span class="built_in">scale</span>   设置页面的最大缩放值。
-user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<span class="number">1</span>或者<span class="number">0</span>
-</code></pre><p>下面有几个地方需要注意一下：<br></p>
-<ul>
-<li>在没有设置缩放，只设置了width属性时，如果页面的宽度大于了设备的宽度，则window.innerWidth的值为页面的宽度，也就是可视区域的宽度，此时的缩放比为：window.innerWidth/document.body.clientWidth，浏览器会自动进行缩放，使得不会出现横向滚动条。</li>
-<li>在同时设置了缩放比，以及width属性的情况下，如果页面的宽度大于了设备的宽度，并且此时按照widow.innerWidth/document.body.clientWidth计算出来的缩放比与设置的缩放比不一致时，会按照设置的initial-scale进行缩放，会出现横向滚动条。</li>
-</ul>
-<p>其实绕了这么多，我也晕了。最后总结起来就是：<br></p>
-<pre><code><span class="title">width</span> = device-width  &lt;==&gt;  layout <span class="foreign"><span class="keyword">port</span> = 设备宽度</span>
-<span class="title">initial</span>-scale = <span class="number">1</span>     &lt;==&gt;  visual <span class="foreign"><span class="keyword">port</span> = layout <span class="keyword">port</span></span>
-</code></pre><p>最常用的，最佳的viewport的设置为：</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, user-scalable=0"</span>&gt;
+<h2 id="特殊样式处理">特殊样式处理</h2><hr>
+<h3 id="高清图片的处理">高清图片的处理</h3><p>在移动web页面上渲染图片，为了避免图片产生模糊，图片的宽高应该按照<strong>物理像素</strong>的单位进行渲染，图片才出现模糊。所以，我们在设置图片的css宽高的时候，需要根据当前手机屏幕的dpr来处理。即：</p>
+<pre><code><span class="label">width:</span>(w_value/dpr) px
+<span class="label">height:</span>(h_value/dpr) px
+</code></pre><h3 id="一像素边框">一像素边框</h3><p>在高清屏幕上，想要渲染出一像素的边框，如果使用border-width:1px来渲染，是回出现问题的。因为在高清屏幕上，手机会用<strong>两个dp来渲染一个px</strong>。因此，渲染出来的border看起来就比”一像素”粗。如何解决这个问题呢？首先想到的是border-width:0.5px。但是这种写法只有iOS8支持。解决方案是：</p>
+<pre><code>使用伪类，加上<span class="tag">scaleY</span>(0<span class="class">.5</span>)来进行缩放。
+例子如下：
+
+    <span class="tag">div</span><span class="rules">{
+        <span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;
+    }</span>
+    <span class="tag">div</span><span class="pseudo">:before</span><span class="rules">{
+        <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+        <span class="rule"><span class="attribute">top</span>:<span class="value">-<span class="number">1px</span></span></span>;
+        <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">1px</span></span></span>;
+        <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;
+        <span class="rule"><span class="attribute">-webkit-transform</span>:<span class="value"><span class="function">scaleY</span>(<span class="number">0.5</span>)</span></span>;
+    }</span>
+</code></pre><h3 id="使用rem来处理元素的大小">使用rem来处理元素的大小</h3><p>rem:根据根节点的font-size为相对单位。<br><br>em:根据父亲节点的font-size为相对单位。在多层嵌套下，变得难以维护。<br></p>
+<p>rem的基值设置为多少比较好？<br><br>rem = screen.width/20（仅供参考，具体情况，具体分析）<br></p>
+<p>注意，一般来讲，font-size是不应该使用rem等相对单位的。因为字体的大小是趋于阅读的实用性，并不适用于排版布局。同理，趋向于一些固定的元素的特性，不实用rem而改为使用px去确保在不同屏幕上表现一致。</p>
+<h3 id="多行文本溢出">多行文本溢出</h3><p>单行文本溢出…</p>
+<pre><code><span class="tag">line</span><span class="rules">{
+    <span class="rule"><span class="attribute">overfolw</span>:<span class="value">hidden</span></span>;
+    <span class="rule"><span class="attribute">white-space</span>:<span class="value">nowrap</span></span>;
+    <span class="rule"><span class="attribute">text-overflow</span>:<span class="value">ellipsis</span></span>;
+}</span>
+</code></pre><p>多行文本溢出…</p>
+<pre><code><span class="tag">line</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value">-webkit-box</span></span>;
+    <span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;    
+    <span class="rule"><span class="attribute">text-overflow</span>:<span class="value">ellipsis</span></span>;
+    <span class="rule"><span class="attribute">word-break</span>:<span class="value">break-all</span></span>;
+    <span class="rule"><span class="attribute">-webkit-box-orient</span>:<span class="value">vertical</span></span>;
+    <span class="rule"><span class="attribute">-webkit-line-clamp</span>:<span class="value"><span class="number">2</span> //这里的属性值表示显示的行数
+</span></span></span>}
 </code></pre></span>
       
     </div>
@@ -333,9 +366,9 @@ user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<
       
         <div class="post-tags">
           
-            <a href="/tags/meta/" rel="tag">#meta</a>
+            <a href="/tags/响应式注意事项/" rel="tag">#响应式注意事项</a>
           
-            <a href="/tags/viewport/" rel="tag">#viewport</a>
+            <a href="/tags/响应式设计/" rel="tag">#响应式设计</a>
           
             <a href="/tags/移动web/" rel="tag">#移动web</a>
           
@@ -346,17 +379,13 @@ user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/24/移动web开发学习笔记-1/" rel="next" title="移动web开发学习笔记-1">
-                <i class="fa fa-chevron-left"></i> 移动web开发学习笔记-1
+              <a href="/2016/04/08/移动web开发学习笔记-2/" rel="next" title="移动web开发学习笔记-2">
+                <i class="fa fa-chevron-left"></i> 移动web开发学习笔记-2
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/30/移动web开发学习笔记3-响应式开发/" rel="prev" title="移动web开发学习笔记3-响应式开发">
-                移动web开发学习笔记3-响应式开发 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -408,8 +437,8 @@ user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/08/移动web开发学习笔记-2/"
-           data-title="移动web开发学习笔记-2" data-url="http://yoursite.com/2016/04/08/移动web开发学习笔记-2/">
+      <div class="ds-thread" data-thread-key="2016/04/30/移动web开发学习笔记3-响应式开发/"
+           data-title="移动web开发学习笔记3-响应式开发" data-url="http://yoursite.com/2016/04/30/移动web开发学习笔记3-响应式开发/">
       </div>
     
   </div>
@@ -532,7 +561,7 @@ user-scalable   是否允许用户进行缩放，值为『yes』或者『no』,<
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是viewport"><span class="nav-number">1.</span> <span class="nav-text">什么是viewport</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用meta标签对viewport进行控制"><span class="nav-number">2.</span> <span class="nav-text">利用meta标签对viewport进行控制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式设计"><span class="nav-number">1.</span> <span class="nav-text">响应式设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex布局"><span class="nav-number">1.1.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.2.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊样式处理"><span class="nav-number">2.</span> <span class="nav-text">特殊样式处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高清图片的处理"><span class="nav-number">2.1.</span> <span class="nav-text">高清图片的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一像素边框"><span class="nav-number">2.2.</span> <span class="nav-text">一像素边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用rem来处理元素的大小"><span class="nav-number">2.3.</span> <span class="nav-text">使用rem来处理元素的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本溢出"><span class="nav-number">2.4.</span> <span class="nav-text">多行文本溢出</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
