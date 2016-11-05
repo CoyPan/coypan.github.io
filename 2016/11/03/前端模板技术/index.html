@@ -1,0 +1,832 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,前端模板技术," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/luffy.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="总是能够看见各种各样的前端模板，以前对这些模板技术的理解就是暴力的正则匹配。最近在学习Vue，就稍微研究了一下模板技术。下面浅谈一下。
+
+什么是模板摘抄一个vue的：1234567891011&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&amp;lt;/div&amp;gt;new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈前端模板技术">
+<meta property="og:url" content="http://yoursite.com/2016/11/03/前端模板技术/index.html">
+<meta property="og:site_name" content="Coy Blog">
+<meta property="og:description" content="总是能够看见各种各样的前端模板，以前对这些模板技术的理解就是暴力的正则匹配。最近在学习Vue，就稍微研究了一下模板技术。下面浅谈一下。
+
+什么是模板摘抄一个vue的：1234567891011&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&amp;lt;/div&amp;gt;new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#">
+<meta property="og:updated_time" content="2016-11-05T10:25:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈前端模板技术">
+<meta name="twitter:description" content="总是能够看见各种各样的前端模板，以前对这些模板技术的理解就是暴力的正则匹配。最近在学习Vue，就稍微研究了一下模板技术。下面浅谈一下。
+
+什么是模板摘抄一个vue的：1234567891011&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;#123;&amp;#123; message &amp;#125;&amp;#125;&amp;lt;/div&amp;gt;new Vue(&amp;#123;  el: &apos;#app&apos;,  data: &amp;#">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 浅谈前端模板技术 | Coy Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d52087268816a85b01d51ddbeda0e1ae";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Coy Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+
+ 
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅谈前端模板技术
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-11-03T15:20:12+08:00" content="2016-11-03">
+              2016-11-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/03/前端模板技术/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/03/前端模板技术/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+           
+          
+            &nbsp;&nbsp;|&nbsp;&nbsp;阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote>
+<p>总是能够看见各种各样的前端模板，以前对这些模板技术的理解就是暴力的正则匹配。最近在学习Vue，就稍微研究了一下模板技术。下面浅谈一下。</p>
+</blockquote>
+<h4 id="什么是模板">什么是模板</h4><p>摘抄一个vue的：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">  <span class="expansion">&#123;&#123; message &#125;&#125;</span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: '#app',</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: 'Hello Vue.js!'</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的一段HTML代码就可以看成是一个模板，最终解析输出在页面上就是：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"app"</span>&gt;</span><br><span class="line">    Hello Vue.js!</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再看一下其他的：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-<span class="keyword">for</span>=<span class="string">"todo in todos"</span>&gt;</span><br><span class="line">      <span class="expansion">&#123;&#123; todo.text &#125;&#125;</span></span><br><span class="line">    &lt;<span class="regexp">/li&gt;</span><br><span class="line">  &lt;/ul</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我的理解就是，模板就是提供了一个框，只需要把数据按照一定的规则往里面灌就行了，无需自己再去写重复冗长的HTML代码。</p>
+<p><strong>每种模板技术都会指定自己的模板语法，并且提供相应的解析器将其解析为浏览器可以识别的HTML代码。</strong>模板技术的重点就是如何==解析模板==</p>
+<h4 id="模板解析">模板解析</h4><blockquote>
+<p>之前我的认识就是，模板的解析就是用正则暴力去匹配，然后拼成HTML代码插入DOM中。我的认识无疑是浅显的:)实现的细节也没有仔细考虑过。</p>
+</blockquote>
+<p>一个前端的模板解决方法主要是有以下两种：</p>
+<ol>
+<li>String-based(基于字符串的)</li>
+<li>Dom-based(基于DOM的)</li>
+</ol>
+<h5 id="String-based">String-based</h5><p>String-based解决方案的核心就是：使用正则表达式处理HTML模板，生成字符串，使用innerHTML插入目标DOM.</p>
+<p>下面，来实现一个最简单的模板引擎。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">'utf-8'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="id">#page</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="keyword">var</span> name=<span class="string">"World"</span>;</span><br><span class="line">		<span class="keyword">var</span> who=<span class="string">"Barry"</span>;</span><br><span class="line">		<span class="keyword">var</span> func=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			alert(<span class="string">"hello world"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">String</span>.prototype.parse=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> self=<span class="keyword">this</span>.toString();</span><br><span class="line">			<span class="comment">/*去掉所有换行符*/</span></span><br><span class="line">			self=self.replace(<span class="regexp">/\n/g</span>,<span class="string">""</span>).trim();</span><br><span class="line">			<span class="comment">/*提取template内的str内容*/</span></span><br><span class="line">			<span class="keyword">var</span> strReg=<span class="regexp">/&lt;template&gt;(.*)&lt;\/template&gt;/g</span>;</span><br><span class="line">			<span class="keyword">var</span> innerStr=strReg.exec(self)[<span class="number">1</span>].trim();</span><br><span class="line"></span><br><span class="line">			<span class="comment">/*str-based引擎的关键*/</span></span><br><span class="line">			<span class="keyword">var</span> opReg = <span class="regexp">/p\-click/gi</span>;<span class="comment">//替换事件名的正则</span></span><br><span class="line">			<span class="keyword">var</span> html1=innerStr.replace(<span class="regexp">/(p\-click=)"(.*)"/gi</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,p1,p2</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="string">"onClick='"</span>+p2+<span class="string">"'"</span>;</span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">var</span> html2=html1.replace(<span class="regexp">/\$(\w+)\$/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,p1</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">window</span>[p1];</span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">return</span> html2;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">template</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">div</span> <span class="attribute">p-click</span>=<span class="value">"func()"</span>&gt;</span>Hello $name$. My name is $who$<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> str=<span class="built_in">document</span>.getElementById(<span class="string">'page'</span>).innerHTML;</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">'page'</span>).innerHTML=str.parse();</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">'page'</span>).style.display=<span class="string">'block'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面是我理解的基于str的模板的一个简单的demo。渲染完成后，通过浏览器看到的html结构为：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"page"</span> style=<span class="string">"display: block;"</span>&gt;&lt;<span class="keyword">div</span> onclick=<span class="string">"func()"</span>&gt;Hello World. My <span class="property">name</span> <span class="keyword">is</span> Barry&lt;/<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>点击「hello world」就可以弹出提示。<br>其实，这个模板很简单。HTML结构如下。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"page"</span>&gt;</span><br><span class="line">	&lt;template&gt;</span><br><span class="line">		&lt;div p-click=<span class="string">"func()"</span>&gt;Hello <span class="variable">$name</span>$. My name is <span class="variable">$who</span>$&lt;/div&gt;</span><br><span class="line">	&lt;/template&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">处理上述结构的逻辑就是：</span><br><span class="line">page结构是默认display:none的。这样，页面上就不会显示上述HTML。</span><br><span class="line">页面onload后，使用innerHTML取到page里面的内容，</span><br><span class="line">通过正则表达式取到&lt;template&gt;里的内容，</span><br><span class="line">然后使用这则表达式解析   </span><br><span class="line">    &lt;div p-click=<span class="string">'func()'</span>&gt;hello <span class="variable">$name</span>$. My name is <span class="variable">$who</span>$&lt;/div&gt;.</span><br><span class="line">解析的过程中，</span><br><span class="line">p-click会被替换成onClick。func是全局定义的一个函数。</span><br><span class="line">$$中的name和who都是是全局的一个变量。</span><br><span class="line"></span><br><span class="line">最终返回一个字符串：</span><br><span class="line">&lt;div onClick=<span class="string">'func()'</span>&gt;Hello World. My name is Barry&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">最后，将上述字符串以innerHTML的方式插入到page节点中，并且将page节点的display设为:block.</span><br></pre></td></tr></table></figure></p>
+<p>基于字符串的模板，按照我的理解，就是把HTML模板全部当成字符串’，使用正则解析成可以呗浏览器识别的HTML代码，显示到前端。当然，在解析的过程中，会借助到编译原理的词法分析，语法分析等。这里就不展开了。</p>
+<h5 id="DOM-based">DOM-based</h5><p>下面是一个简单的DOM-based的模板。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">'utf-8'</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">		<span class="id">#page</span><span class="rules">&#123;</span><br><span class="line">			<span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line">		&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="keyword">var</span> name=<span class="string">"World"</span>;</span><br><span class="line">		<span class="keyword">var</span> who=<span class="string">"Barry"</span>;</span><br><span class="line">		<span class="keyword">var</span> _DOMTREE=&#123;&#125;;</span><br><span class="line">		<span class="keyword">var</span> func=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			alert(<span class="string">"hello world"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> analyze=<span class="function"><span class="keyword">function</span>(<span class="params">dom,obj</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(!dom.childNodes)&#123;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(dom.nodeName !== <span class="string">"DIV"</span>)&#123;</span><br><span class="line">				obj.node=<span class="string">"text"</span>;</span><br><span class="line">				obj.clickEvent=<span class="string">""</span>;</span><br><span class="line">				obj.clickFunc=<span class="string">""</span>;</span><br><span class="line">				obj.text=dom.nodeValue;</span><br><span class="line">				dom.nodeValue=dom.nodeValue.replace(<span class="regexp">/\$(\w+)\$/gi</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e,p</span>)</span>&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="built_in">window</span>[p];</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				obj.node=<span class="string">"notext"</span>;</span><br><span class="line">				obj.text=<span class="string">""</span>;</span><br><span class="line">				<span class="keyword">if</span>(dom.getAttribute(<span class="string">"p-click"</span>))&#123;</span><br><span class="line">					obj.clickEvent=dom.getAttribute(<span class="string">"p-click"</span>).replace(<span class="regexp">/\(\)/g</span>,<span class="string">""</span>);</span><br><span class="line">					obj.clickFunc=<span class="built_in">window</span>[obj.clickEvent];</span><br><span class="line">					dom.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">						obj.clickFunc();</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					obj.clickFunc=<span class="string">""</span>;</span><br><span class="line">					obj.clickEvent=<span class="string">""</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			obj.children=<span class="keyword">new</span> <span class="built_in">Array</span>(dom.childNodes.leng);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,l=dom.childNodes.length;i&lt;l;i++)&#123;</span><br><span class="line">				obj.children[i]=&#123;&#125;;</span><br><span class="line">				analyze(dom.childNodes[i],obj.children[i])</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">String</span>.prototype.domParse=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> self=<span class="keyword">this</span>.toString();</span><br><span class="line">			<span class="comment">/*去掉所有换行符*/</span></span><br><span class="line">			self=self.replace(<span class="regexp">/\n/g</span>,<span class="string">""</span>).trim();</span><br><span class="line">			<span class="comment">/*提取template内的str内容,生成临时dom*/</span></span><br><span class="line">			<span class="keyword">var</span> strReg=<span class="regexp">/&lt;template&gt;(.*)&lt;\/template&gt;/g</span>;</span><br><span class="line">			<span class="keyword">var</span> strStep1=strReg.exec(self)[<span class="number">1</span>].trim();</span><br><span class="line">			<span class="keyword">var</span> tempDiv=<span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">			tempDiv.innerHTML=strStep1;</span><br><span class="line"></span><br><span class="line">			<span class="comment">/*dom-based引擎的关键*/</span></span><br><span class="line">			<span class="keyword">var</span> rootTempDom=<span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line">			rootTempDom.appendChild(tempDiv);</span><br><span class="line">			analyze(rootTempDom.childNodes[<span class="number">0</span>],_DOMTREE);</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">"page"</span>).innerHTML=<span class="string">""</span>;</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">"page"</span>).appendChild(rootTempDom);		&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"page"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">template</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">div</span> <span class="attribute">p-click</span>=<span class="value">"func()"</span>&gt;</span>Hello $name$. My name is $who$<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">		<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">'page'</span>).innerHTML.domParse();</span><br><span class="line">			<span class="built_in">document</span>.getElementById(<span class="string">'page'</span>).style.display=<span class="string">'block'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，模板代码和之前一样，依然是：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div p-click=<span class="string">"func()"</span>&gt;Hello <span class="variable">$name</span>$. My name is <span class="variable">$who</span>$&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>解析过后，在页面中展现的结果如下：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"page"</span> style=<span class="string">"display: block;"</span>&gt;&lt;<span class="keyword">div</span>&gt;&lt;<span class="keyword">div</span> p-click=<span class="string">"func()"</span>&gt;Hello World. My <span class="property">name</span> <span class="keyword">is</span> Barry&lt;/<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意上面的结果，与str-based最大的不同之处，在于DOM的属性依然是『p-click』,而不是str-based中的『onclick』。DOM-based的处理过程如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">首先，依然需要使用innerHTML来取得模板内的内容（字符串）。接下来，将取得的内容转化为DOM结构，再进行下一步操作。</span><br><span class="line">而str-based则是直接在字符串上进行处理。</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*提取template内的str内容,生成临时dom*/</span></span><br><span class="line">	<span class="variable"><span class="keyword">var</span> strReg</span>=/<span class="type">&lt;template&gt;</span>(.*)<span class="type">&lt;\/template&gt;</span>/g;</span><br><span class="line">	<span class="variable"><span class="keyword">var</span> strStep1</span>=strReg.exec(self)[<span class="number">1</span>].trim();</span><br><span class="line">	<span class="variable"><span class="keyword">var</span> tempDiv</span>=document.createElement(<span class="string">"div"</span>);</span><br><span class="line">	tempDiv.innerHTML=strStep1;</span><br><span class="line">	</span><br><span class="line">接下来，使用DOM相关的api处理生成的临时DOM。具体参见代码中的analyze函数。</span><br><span class="line">这里，我使用了一个全局变量_DOMTREE来记录dom结构（目前的_DOMTREE并没有和真实的DOM进行关联）。</span><br><span class="line">最后，清空id=page的dom的innerHTML值，将临时DOM插入。</span><br></pre></td></tr></table></figure></p>
+<p>上述就是我理解的DOM-based模板的工作流程。</p>
+<h4 id="总结">总结</h4><p>不管是str-based和dom-based,都各有各的优缺点。详细的总结、介绍，可以阅读这篇文章：<br><a href="http://blog.csdn.net/yczz/article/details/49585381" target="_blank" rel="external">一个对前端模板技术的全面总结</a></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/前端模板技术/" rel="tag">#前端模板技术</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/30/移动web开发学习笔记3-响应式开发/" rel="next" title="移动web开发学习笔记3-响应式开发">
+                <i class="fa fa-chevron-left"></i> 移动web开发学习笔记3-响应式开发
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/03/前端模板技术/"
+           data-title="浅谈前端模板技术" data-url="http://yoursite.com/2016/11/03/前端模板技术/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/uploads/avator.jpg" alt="Coy Pan" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Coy Pan</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">To be a good FE</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coypan" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1629853153" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/coy-pan" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://coypan.com/" target="_blank">个人主页</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.andyspace.cn/" target="_blank">noticeZhou</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://aleche.github.io/" target="_blank">alecHe</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是模板"><span class="nav-number">1.</span> <span class="nav-text">什么是模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板解析"><span class="nav-number">2.</span> <span class="nav-text">模板解析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-based"><span class="nav-number">2.1.</span> <span class="nav-text">String-based</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-based"><span class="nav-number">2.2.</span> <span class="nav-text">DOM-based</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Coy Pan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+
+    &nbsp;&nbsp|&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coypan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+</body>
+</html>
